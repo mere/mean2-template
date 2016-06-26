@@ -10,6 +10,10 @@ var del = require('del');
 var runSequence = require('run-sequence');
 var browserSync = require('browser-sync').create();
 
+// This will provide the proper port number that the site runs on
+// for the proxy setting of BrowserSync.
+var devConfig = require('./config/env/development');
+
 
 // Performs all required build tasks.
 gulp.task('build', function (callback) {
@@ -29,7 +33,7 @@ gulp.task('default', function (callback) {
 // Startup the app's homepage and watch for changes to the Angular 2 HTML and JS files
 gulp.task('browser-sync', function() {
     browserSync.init({
-        proxy: 'localhost:3000',
+        proxy: 'localhost:' + devConfig.server.port,
         port: 8080
     });
 });
