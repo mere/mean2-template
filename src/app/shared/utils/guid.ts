@@ -5,7 +5,7 @@ export class Guid {
         this.guid = g;
     }
 
-    static Create(includeSeparator: boolean = true) : Guid {
+    static create(includeSeparator: boolean = true) : Guid {
         var result: string;
         var i: string;
         var j: number;
@@ -21,7 +21,7 @@ export class Guid {
         return new Guid(result);
     }
 
-    public ToString() : string {
+    public toString() : string {
         return this.guid;
     }
 }
