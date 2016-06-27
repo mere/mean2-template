@@ -23,25 +23,9 @@
         '@angular/platform-browser-dynamic',
         '@angular/router',
 
-        'app/benefits',
-        'app/benefits/health',
-        'app/benefits/life-insurance',
-        'app/benefits/retirement',
         'app/home',
-        'app/search',
         'app/shared',
-        'app/shared/content-block',
-        'app/shared/digital-assistant',
-        'app/shared/employee',
-        'app/shared/team-viewer',
-        'app/shared/utils',
-        'app/shared/vacation-request',
-        'app/time-off',
-        'app/time-off/leave-of-absence',
-        'app/time-off/paid-time',
-        'app/time-off/paid-time/paid-time-details',
-        'app/time-off/paid-time/sick-time',
-        'app/time-off/paid-time/vacation-time'
+        'app/shared/utils'
     ];
 
     // Individual files (~300 requests):

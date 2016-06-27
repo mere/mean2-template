@@ -90,8 +90,7 @@ export class BaseRestService {
      * @return {any) The response data in JSON format or the Response object if "isJson" is false.
      */
     private extractData(res: Response) : any {
-        let body = res.json();
-        return body.data || { };
+        return res.json() || { };
     }
 
     /**
@@ -100,8 +99,9 @@ export class BaseRestService {
      * @param {any} error   The error text.
      */
     private handleError(error: any) {
-        let errMsg = (error.message) ? error.message :
-            (error.status) ? `${error.status} - ${error.statusText}` : 'Server error';
+        let errMsg = (error.message)
+            ? error.message
+            : (error.status) ? `${error.status} - ${error.statusText}` : 'Server error';
 
         return Observable.throw(errMsg);
     }
