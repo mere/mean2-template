@@ -76,7 +76,7 @@ export class BaseRestService {
      * @return {Observable<T>} An observable to the response status and data.
      * @throws {Error} An error object if a bad HTTP status is detected.
      */
-    public delete<T>(url: string) : Observable<T> {
+    public del<T>(url: string) : Observable<T> {
         return this.http.delete(url, this.options)
             .map(response => this.extractData(response))
             .catch(error => this.handleError(error));
