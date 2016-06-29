@@ -9,5 +9,9 @@
 <script src="js/plugins/jquery-ui/jquery-ui.min.js"></script>
 
 <!-- Application scripts -->
-<script src="js/bundle.min.js"></script>
+<% if(process.env.NODE_ENV == 'dev') { %>
+    <script src="js/bundle.js"></script>
+<% } else { %>
+    <script src="js/bundle.min.js"></script>
+<% } %>
 

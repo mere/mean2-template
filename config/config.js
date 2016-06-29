@@ -1,4 +1,4 @@
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 // load the config file for the current environment
 var config = require('./env/' + process.env.NODE_ENV);

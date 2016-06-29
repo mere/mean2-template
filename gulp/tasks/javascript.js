@@ -1,10 +1,15 @@
 var gulp = require('gulp');
 var gulpIgnore = require('gulp-ignore');
+var gulpIf = require('gulp-if');
+var util = require('gulp-util');
 var merge = require('gulp-merge');
 var minify = require('gulp-minify');
 var browserify = require('browserify');
 var sourceStream = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+
+// Checks for "--production" command-lin param. The !! will normalize undefined to false.
+var isProd = !!util.env.production;
 
 // Copies all javascript files from the "src" folder to the "dist" folder.
 gulp.task('javascript', function() {
@@ -17,13 +22,14 @@ gulp.task('javascript', function() {
         .bundle()
         .pipe(sourceStream('bundle.js'))
         .pipe(buffer())
-        .pipe(minify({
+        .pipe(gulpIf(isProd, minify({
             ext: {
                 src: '.js',
                 min: '.min.js'
-            }
-        }))
-        .pipe(gulpIgnore.include('*.min.js'))
+            },
+            ignoreFiles: ['.min.js']
+        })))
+        .pipe(gulpIf(isProd, gulpIgnore.include('*.min.js')))
         .pipe(gulp.dest('./dist/js'));
 
     return merge(plugins, appjs);
