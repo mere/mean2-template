@@ -8,6 +8,12 @@ var config = require('../../config/config');
 gulp.task('browser-sync', function() {
     browserSync.init({
         proxy: 'localhost:' + config.server.port,
-        port: 8080
+        port: 8080,
+        files: [
+            'dist/app/**/*',
+            'dist/css/**/*',
+            'dist/img/**/*',
+            'dist/js/**/*'
+        ]
     });
 });

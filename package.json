@@ -21,14 +21,16 @@
     "@angular/router": "2.0.0-rc.2",
     "body-parser": "~1.15.1",
     "bootstrap": "^3.3.6",
+    "browserify": "^13.0.1",
     "cookie-parser": "~1.4.3",
     "core-js": "^2.4.0",
     "cors": "^2.7.1",
     "debug": "~2.2.0",
+    "ejs": "~2.4.1",
     "es5-shim": "^4.5.8",
     "es6-shim": "^0.35.0",
-    "ejs": "~2.4.1",
     "express": "~4.13.4",
+    "jquery": "^3.0.0",
     "mongodb": "^2.1.18",
     "mongoose": "^4.4.14",
     "morgan": "~1.7.0",
@@ -51,6 +53,7 @@
     "gulp-if": "^2.0.1",
     "gulp-ignore": "^2.0.1",
     "gulp-imagemin": "^3.0.1",
+    "gulp-merge": "^0.1.1",
     "gulp-minify": "0.0.12",
     "gulp-replace": "^0.5.4",
     "gulp-sass": "^2.3.2",
@@ -59,6 +62,8 @@
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.1",
     "typescript": "^1.8.10",
-    "typings": "^0.8.1"
+    "typings": "^0.8.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   }
 }
