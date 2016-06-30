@@ -4,7 +4,8 @@
   "description": "",
   "author": "",
   "scripts": {
-    "start": "gulp && concurrently \"npm run tsc:w\" \"node ./bin/www\"",
+    "start": "NODE_ENV=production node ./bin/www",
+    "start:dev": "gulp && concurrently \"npm run tsc:w\" \"node ./bin/www\"",
     "build": "gulp build && npm run tsc",
     "build:prod": "gulp build --production && npm run tsc",
     "tsc": "tsc",
