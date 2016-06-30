@@ -11,13 +11,13 @@ var isProd = !!util.env.production;
 // Copies the proper environment configuration file from the 'config/client' directory and
 // renames it to 'src/app/environment.ts'. This MUST be done prior to TypeScript compilation.
 gulp.task('copy-client-env', function() {
-    var devConfig = gulp.src('./config/client/environment.dev.ts')
+    var devConfig = gulp.src('./client/src/config/environment.dev.ts')
         .pipe(rename('environment.ts'))
-        .pipe(gulpIf(!isProd, gulp.dest('./src/app')));
+        .pipe(gulpIf(!isProd, gulp.dest('./client/src/app')));
 
-    var prodConfig = gulp.src('./config/client/environment.prod.ts')
+    var prodConfig = gulp.src('./client/src/config/environment.prod.ts')
         .pipe(rename('environment.ts'))
-        .pipe(gulpIf(isProd, gulp.dest('./src/app')));
+        .pipe(gulpIf(isProd, gulp.dest('./client/src/app')));
 
     return merge(devConfig, prodConfig);
 });

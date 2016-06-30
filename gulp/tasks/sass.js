@@ -10,12 +10,12 @@ var isProd = !!util.env.production;
 
 // Processes SASS files and copies resulting CSS file "dist/css" folder.
 gulp.task('sass', function() {
-    return gulp.src('./src/sass/style.scss')
+    return gulp.src('./client/src/sass/style.scss')
         .pipe(sass())
         .pipe(gulpIf(isProd, cssnano( {
             discardComments: {
                 removeAll: true
             }
         })))
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./client/dist/css'));
 });

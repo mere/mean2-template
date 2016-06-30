@@ -3,8 +3,8 @@
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
-    "outDir": "./dist/",
-    "rootDir": "./src",
+    "outDir": "./client/dist/",
+    "rootDir": "./client/src",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -15,7 +15,7 @@
   },
   "exclude": [
     "node_modules",
-    "config/client"
+    "client/src/config"
   ],
   "compileOnSave": false,
   "buildOnSave": false

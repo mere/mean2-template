@@ -8,6 +8,6 @@ var isProd = !!util.env.production;
 
 // Copies all CSS files from the "src" folder to the "dist" folder.
 gulp.task('css', function() {
-    return gulp.src('./src/css/**/*')
-        .pipe(gulp.dest('./dist/css'));
+    return gulp.src('./client/src/css/**/*')
+        .pipe(gulp.dest('./client/dist/css'));
 });

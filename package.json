@@ -1,11 +1,11 @@
 {
   "name": "MEAN2",
   "version": "1.0.0",
-  "description": "",
-  "author": "",
+  "description": "Sample MEAN2 Application",
+  "author": "Dave McManus",
   "scripts": {
-    "start": "NODE_ENV=production node ./bin/www",
-    "start:dev": "gulp && concurrently \"npm run tsc:w\" \"node ./bin/www\"",
+    "start": "node ./server/bin/www",
+    "launch:dev": "concurrently \"npm run tsc:w\" \"node ./server/bin/www\" \"gulp launch\"",
     "build": "gulp build && npm run tsc",
     "build:prod": "gulp build --production && npm run tsc",
     "tsc": "tsc",

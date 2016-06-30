@@ -14,11 +14,11 @@ var isProd = !!util.env.production;
 // Copies all javascript files from the "src" folder to the "dist" folder.
 gulp.task('javascript', function() {
     // Move all plugins
-    var plugins = gulp.src(['./src/javascript/**/*', '!./src/javascript/*.js'])
-        .pipe(gulp.dest('./dist/js'));
+    var plugins = gulp.src(['./client/src/javascript/**/*', '!./client/src/javascript/*.js'])
+        .pipe(gulp.dest('./client/dist/js'));
 
     // Browserify and minify application specific javascript
-    var appjs = browserify('./src/javascript/app.js')
+    var appjs = browserify('./client/src/javascript/app.js')
         .bundle()
         .pipe(sourceStream('bundle.js'))
         .pipe(buffer())
@@ -30,7 +30,7 @@ gulp.task('javascript', function() {
             ignoreFiles: ['.min.js']
         })))
         .pipe(gulpIf(isProd, gulpIgnore.include('*.min.js')))
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest('./client/dist/js'));
 
     return merge(plugins, appjs);
 });

@@ -3,5 +3,5 @@ var del = require('del');
 
 // Cleans the "dist" folder.
 gulp.task('clean-dist', function() {
-    return del.sync('dist');
+    return del.sync('./client/dist');
 });

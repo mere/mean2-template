@@ -3,5 +3,5 @@ var del = require('del');
 
 // Cleans the "dist" folder.
 gulp.task('del-env-file', function() {
-    return del.sync('./src/app/environment.ts');
+    return del.sync('./client/src/app/environment.ts');
 });
