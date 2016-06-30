@@ -1,5 +1,10 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
 # compiled output
 /dist
+
+# This is replced during the build process with the proper settings file from the 'config/client' directory.
+/src/app/environment.ts
 
 # dependencies
 /node_modules
@@ -14,8 +19,3 @@ npm-debug.log
 #System Files
 .DS_Store
 Thumbs.db
-
-
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-

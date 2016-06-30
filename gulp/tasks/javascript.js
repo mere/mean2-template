@@ -8,7 +8,7 @@ var browserify = require('browserify');
 var sourceStream = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 
-// Checks for "--production" command-lin param. The !! will normalize undefined to false.
+// Checks for "--production" command-line param. The !! will normalize undefined to false.
 var isProd = !!util.env.production;
 
 // Copies all javascript files from the "src" folder to the "dist" folder.

@@ -3,7 +3,9 @@ var runSequence = require('run-sequence');
 
 // DEFAULT TASK: Performs all tasks to run the application
 gulp.task('default', function (callback) {
-    runSequence(['app', 'watch', 'browser-sync'],
+    runSequence('build',
+        'watch',
+        'browser-sync',
         callback
     );
 });
