@@ -1,7 +1,8 @@
 {
   "name": "MEAN2",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
+  "author": "",
   "scripts": {
     "start": "gulp && concurrently \"npm run tsc:w\" \"node ./bin/www\"",
     "build": "gulp build && npm run tsc",
