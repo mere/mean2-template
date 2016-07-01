@@ -18,20 +18,19 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(favicon(path.join(__dirname, '../client/dist/img/favicon.ico')));
+app.use(favicon(path.join(__dirname, '../public/img/favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 
 // static file paths
-app.use('/img', express.static(path.join(__dirname, '../client/dist/img')));
-app.use('/css', express.static(path.join(__dirname, '../client/dist/css')));
-app.use('/js', express.static(path.join(__dirname, '../client/dist/js')));
-app.use('/fonts', express.static(path.join(__dirname, '../client/dist/fonts')));
-app.use('/font-awesome', express.static(path.join(__dirname, '../client/dist/font-awesome')));
+app.use('/img', express.static(path.join(__dirname, '../public/img')));
+app.use('/css', express.static(path.join(__dirname, '../public/css')));
+app.use('/js', express.static(path.join(__dirname, '../public/js')));
+app.use('/fonts', express.static(path.join(__dirname, '../public/fonts')));
 app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
-app.use('/app', express.static(path.join(__dirname, '../client/dist/app')));
+app.use('/app', express.static(path.join(__dirname, '../dist/app')));
 
 // Routes
 var routes = require('./routes');

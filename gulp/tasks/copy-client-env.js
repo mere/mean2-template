@@ -8,16 +8,16 @@ var util = require('gulp-util');
 // Checks for "--production" command-line param. The !! will normalize undefined to false.
 var isProd = !!util.env.production;
 
-// Copies the proper environment configuration file from the 'config/client' directory and
-// renames it to 'src/app/environment.ts'. This MUST be done prior to TypeScript compilation.
+// Copies the proper environment configuration file from the 'client/config' directory and
+// renames it to 'client/app/environment.ts'. This MUST be done prior to TypeScript compilation.
 gulp.task('copy-client-env', function() {
-    var devConfig = gulp.src('./client/src/config/environment.dev.ts')
+    var devConfig = gulp.src('./client/config/environment.dev.ts')
         .pipe(rename('environment.ts'))
-        .pipe(gulpIf(!isProd, gulp.dest('./client/src/app')));
+        .pipe(gulpIf(!isProd, gulp.dest('./client/app')));
 
-    var prodConfig = gulp.src('./client/src/config/environment.prod.ts')
+    var prodConfig = gulp.src('./client/config/environment.prod.ts')
         .pipe(rename('environment.ts'))
-        .pipe(gulpIf(isProd, gulp.dest('./client/src/app')));
+        .pipe(gulpIf(isProd, gulp.dest('./client/app')));
 
     return merge(devConfig, prodConfig);
 });

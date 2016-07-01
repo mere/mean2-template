@@ -6,7 +6,7 @@ gulp.task('build', function (callback) {
     runSequence('clean-dist',
         'del-env-file',
         'copy-client-env',
-        ['app', 'css', 'fonts', 'images', 'javascript', 'sass'],
+        ['app', 'javascript', 'sass'],
         callback
     );
 });

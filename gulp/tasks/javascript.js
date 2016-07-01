@@ -11,14 +11,10 @@ var buffer = require('vinyl-buffer');
 // Checks for "--production" command-line param. The !! will normalize undefined to false.
 var isProd = !!util.env.production;
 
-// Copies all javascript files from the "src" folder to the "dist" folder.
+// Browserify and minify application specific javascript. Then copy the resulting javascript file
+// to the "public/js" folder.
 gulp.task('javascript', function() {
-    // Move all plugins
-    var plugins = gulp.src(['./client/src/javascript/**/*', '!./client/src/javascript/*.js'])
-        .pipe(gulp.dest('./client/dist/js'));
-
-    // Browserify and minify application specific javascript
-    var appjs = browserify('./client/src/javascript/app.js')
+    return browserify('./client/javascript/app.js')
         .bundle()
         .pipe(sourceStream('bundle.js'))
         .pipe(buffer())
@@ -26,11 +22,8 @@ gulp.task('javascript', function() {
             ext: {
                 src: '.js',
                 min: '.min.js'
-            },
-            ignoreFiles: ['.min.js']
+            }
         })))
         .pipe(gulpIf(isProd, gulpIgnore.include('*.min.js')))
-        .pipe(gulp.dest('./client/dist/js'));
-
-    return merge(plugins, appjs);
+        .pipe(gulp.dest('./public/js'));
 });
