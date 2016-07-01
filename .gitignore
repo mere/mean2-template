@@ -19,6 +19,6 @@
 npm-debug.log
 /typings
 
-#System Files
+# System Files
 .DS_Store
 Thumbs.db
