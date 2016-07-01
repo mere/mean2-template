@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // Mongo DB module
-//var db = require('./db');
+var db = require('./db');
 
 var app = express();
 

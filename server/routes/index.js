@@ -2,12 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 // Controller Routes
-//router.use('/routepath', require('./path/to/route'));
+router.use('/api/sample', require('./sample'));
 
 // Homepage route
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'MEAN2'});
+    res.render('index', {title: 'YOUR APPLICATION TITLE HERE'});
 });
 
 module.exports = router;
-
