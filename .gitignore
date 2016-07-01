@@ -7,7 +7,7 @@
 /client/app/environment.ts
 /public/js/bundle.js
 /public/js/bundle.min.js
-/css/style.css
+/public/css/style.css
 
 # dependencies
 /node_modules
