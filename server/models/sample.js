@@ -7,7 +7,7 @@ var sampleUserSchema = new Schema( {
         lastName: { type: String, required: true },
         email: { type: String, required: true }
     },
-    { collection: 'directreports' }
+    { collection: 'collection-name' }
 );
 
 /**
