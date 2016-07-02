@@ -1,13 +1,10 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# compiled Angular 2 output
-/dist
+# build output
+/build
 
 # files generated during the build process.
 /client/app/environment.ts
-/public/js/bundle.js
-/public/js/bundle.min.js
-/public/css/style.css
 
 # dependencies
 /node_modules

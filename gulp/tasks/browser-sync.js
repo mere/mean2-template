@@ -13,10 +13,10 @@ gulp.task('browser-sync', function() {
             port: 8081
         },
         files: [
-            //'./client/dist/app/**/*',
-            './client/dist/css/**/*',
-            './client/dist/img/**/*',
-            './client/dist/js/**/*'
+            //'./build/app/**/*',
+            './build/css/**/*',
+            './build/img/**/*',
+            './build/js/**/*'
         ]
     });
 });

@@ -17,5 +17,5 @@ gulp.task('sass', function() {
                 removeAll: true
             }
         })))
-        .pipe(gulp.dest('./public/css'));
+        .pipe(gulp.dest('./build/css'));
 });
