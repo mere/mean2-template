@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, Routes, ROUTER_DIRECTIVES } from '@angular/router';
+import { ROUTER_DIRECTIVES } from '@angular/router';
 
 import { HomeComponent } from './home';
 
@@ -10,12 +10,6 @@ import { HomeComponent } from './home';
     templateUrl: 'app.component.html',
     directives: [ ROUTER_DIRECTIVES ]
 })
-@Routes([
-    { path: '/', component: HomeComponent },
-])
 export class AppComponent {
 
-    constructor(private router: Router) {
-        
-    }
 }
