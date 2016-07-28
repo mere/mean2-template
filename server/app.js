@@ -6,11 +6,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 // Mongo DB module
-var db = require('./db');
+// - UNCOMMENT TO ENABLE! You will also need to provide connectivity info in the
+//   files "development.js" and "production.js" in the folder "/server/config/env".
+//var db = require('./db');
 
 var app = express();
 
 // Allow CORS request
+// - UNCOMMENT TO ENABLE!
 // var cors = require('cors');
 // app.use(cors());
 
@@ -31,6 +34,7 @@ app.use('/js', express.static(path.join(__dirname, '../build/js')));
 app.use('/fonts', express.static(path.join(__dirname, '../build/fonts')));
 app.use('/node_modules', express.static(path.join(__dirname, '../node_modules')));
 app.use('/app', express.static(path.join(__dirname, '../build/app')));
+app.use('/vendor', express.static(path.join(__dirname, '../build/vendor')));
 
 // Routes
 var routes = require('./routes');

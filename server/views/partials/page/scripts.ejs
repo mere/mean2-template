@@ -13,7 +13,7 @@
         crossorigin="anonymous"></script>
 
 <!-- Application scripts -->
-<% if(process.env.NODE_ENV == 'dev') { %>
+<% if(process.env.NODE_ENV == 'development') { %>
     <script src="js/bundle.js"></script>
 <% } else { %>
     <script src="js/bundle.min.js"></script>

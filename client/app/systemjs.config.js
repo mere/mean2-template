@@ -3,8 +3,8 @@
     // map tells the System loader where to look for things
     var map = {
         'app': 'app', // path where the TypeScript compiled JS output is located
-        '@angular': 'node_modules/@angular',
-        'rxjs': 'node_modules/rxjs'
+        '@angular': 'vendor/@angular',
+        'rxjs': 'vendor/rxjs'
     };
 
     // packages tells the System loader how to load when no filename and/or no extension
