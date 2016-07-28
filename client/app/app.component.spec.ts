@@ -1,7 +1,7 @@
 import { addProviders, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('App: Chatbot.Web', () => {
+describe('App', () => {
     beforeEach(() => {
         addProviders([AppComponent]);
     });
