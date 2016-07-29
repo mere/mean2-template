@@ -12,9 +12,9 @@
     "tsc:w": "tsc -w",
     "typings": "typings",
     "postinstall": "typings install",
-    "unit-test": "karma start karma.conf.js",
+    "unit-test": "karma start ./tests/unit/karma.conf.js",
     "pree2e-test": "webdriver-manager update",
-    "e2e-test": "protractor"
+    "e2e-test": "protractor ./tests/e2e/protractor.conf.js"
 
   },
   "dependencies": {

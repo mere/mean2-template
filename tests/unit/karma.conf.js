@@ -4,7 +4,7 @@ module.exports = function(config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '',
+        basePath: '../..',
 
         // frameworks to use
         // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -27,7 +27,7 @@ module.exports = function(config) {
             { pattern: 'build/vendor/zone.js/dist/async-test.js', included: true, watched: false },
             { pattern: 'build/vendor/zone.js/dist/fake-async-test.js', included: true, watched: false },
 
-            { pattern: 'karma-test-shim.js', included: true, watched: true },
+            { pattern: 'tests/unit/karma-test-shim.js', included: true, watched: true },
 
             // Distribution folder
             { pattern: 'build/**/*', included: false, watched: true }

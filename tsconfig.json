@@ -6,6 +6,7 @@
     "outDir": "./build/app",
     "rootDir": "./client/app",
     "sourceMap": true,
+    "sourceRoot": "/",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "removeComments": true,
@@ -16,7 +17,7 @@
   "exclude": [
     "node_modules",
     "client/config",
-    "e2e",
+    "tests/e2e",
     "build/vendor"
   ],
   "compileOnSave": false,
