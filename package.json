@@ -7,11 +7,15 @@
     "start": "node ./server/bin/www",
     "launch:dev": "concurrently \"npm run tsc:w\" \"node ./server/bin/www\" \"gulp launch\"",
     "build": "gulp build && npm run tsc",
-    "build:prod": "gulp build --production && npm run tsc",
+    "build:prod": "gulp build --production && npm run tsc && gulp del-spec-files",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
-    "postinstall": "typings install"
+    "postinstall": "typings install",
+    "unit-test": "karma start karma.conf.js",
+    "pree2e-test": "webdriver-manager update",
+    "e2e-test": "protractor"
+
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.4",
@@ -75,6 +79,8 @@
     "protractor": "^3.3.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.2.1",
+    "ts-node": "0.5.5",
+    "tslint": "3.11.0",
     "typescript": "^1.8.10",
     "typings": "^1.3.1",
     "vinyl-buffer": "^1.0.0",

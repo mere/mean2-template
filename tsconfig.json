@@ -16,6 +16,7 @@
   "exclude": [
     "node_modules",
     "client/config",
+    "e2e",
     "build/vendor"
   ],
   "compileOnSave": false,
