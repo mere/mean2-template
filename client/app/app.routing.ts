@@ -1,9 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './home';
 
 
 const routes: Routes = [
-    { path: '', component: HomeComponent }
+    { path: '', loadChildren: './home/home.module' }
 ];
 
 export const routing = RouterModule.forRoot(routes);

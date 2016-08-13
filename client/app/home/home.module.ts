@@ -2,22 +2,19 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { routing } from './app.routing';
-import { AppComponent } from './app.component';
-import { HomeModule } from './home';
+import { HomeComponent } from './home.component';
+import { routing } from './home.routing';
 
 
 @NgModule({
     declarations: [
-        AppComponent
+        HomeComponent
     ],
     imports: [
         CommonModule,
         BrowserModule,
         FormsModule,
-        HomeModule,
         routing
-    ],
-    bootstrap: [ AppComponent ]
+    ]
 })
-export class AppModule { }
+export class HomeModule { }

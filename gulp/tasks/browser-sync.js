@@ -13,7 +13,7 @@ gulp.task('browser-sync', function() {
             port: 8081
         },
         files: [
-            //'./build/app/**/*',
+            './build/app/**/*',
             './build/css/**/*',
             './build/img/**/*',
             './build/js/**/*'
