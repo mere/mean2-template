@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 import { routing } from './app.routing';
 import { AppComponent } from './app.component';
 import { HomeModule } from './home';
@@ -15,6 +17,8 @@ import { HomeModule } from './home';
         CommonModule,
         BrowserModule,
         FormsModule,
+        RouterModule,
+        HttpModule,
         HomeModule,
         routing
     ],
