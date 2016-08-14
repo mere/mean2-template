@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
-import { routing } from './home.routing';
+import { homeRouting } from './home.routing';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { routing } from './home.routing';
         CommonModule,
         BrowserModule,
         FormsModule,
-        routing
+        RouterModule,
+        homeRouting
     ]
 })
 export class HomeModule { }

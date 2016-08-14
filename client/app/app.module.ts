@@ -4,7 +4,9 @@ import { BrowserModule  } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { routing } from './app.routing';
+import { appRouting, appRoutingProviders } from './app.routing';
+
+// Application Features
 import { AppComponent } from './app.component';
 import { HomeModule } from './home';
 
@@ -14,13 +16,12 @@ import { HomeModule } from './home';
         AppComponent
     ],
     imports: [
-        CommonModule,
-        BrowserModule,
-        FormsModule,
-        RouterModule,
-        HttpModule,
+        CommonModule, BrowserModule, FormsModule, RouterModule, HttpModule,
         HomeModule,
-        routing
+        appRouting
+    ],
+    providers: [
+        appRoutingProviders
     ],
     bootstrap: [ AppComponent ]
 })
