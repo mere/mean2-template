@@ -1,10 +1,11 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { HomeComponent } from './home.component';
+import { HomeModule } from './home.module'
 
 describe('Component: Home', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [ HomeComponent ]
+            imports: [ HomeModule ]
         });
     });
 

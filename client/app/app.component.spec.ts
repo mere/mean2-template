@@ -1,10 +1,11 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module'
 
 describe('Component: App', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
-            declarations: [ AppComponent ]
+            imports: [ AppModule ]
         });
     });
 
