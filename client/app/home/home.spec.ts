@@ -17,8 +17,6 @@ describe('Component: Home', () => {
             fixture = TestBed.createComponent(HomeComponent);
             element = fixture.nativeElement;
             component = fixture.componentInstance;
-
-            expect(component).toBeDefined();
         });
     }));
 
