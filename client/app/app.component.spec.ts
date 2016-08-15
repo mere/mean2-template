@@ -12,10 +12,9 @@ describe('App', () => {
         async(() => {
             TestBed.compileComponents().then(() => {
                 let fixture = TestBed.createComponent(AppComponent);
-                fixture.detectChanges();
+                let component = fixture.componentInstance;
 
-                let appCompiled = fixture.nativeElement;
-                expect(appCompiled).toBeDefined();
+                expect(component).toBeDefined();
             });
         })
     );

@@ -12,10 +12,9 @@ describe('Homepage', () => {
         async(() => {
             TestBed.compileComponents().then(() => {
                 let fixture = TestBed.createComponent(HomeComponent);
-                let homeCompiled = fixture.nativeElement;
-                fixture.detectChanges();
+                let component = fixture.componentInstance;
 
-                expect(homeCompiled).toBeDefined();
+                expect(component).toBeDefined();
             });
         })
     );
@@ -24,11 +23,9 @@ describe('Homepage', () => {
         async(() => {
             TestBed.compileComponents().then(() => {
                 let fixture = TestBed.createComponent(HomeComponent);
-                let homeCompiled = fixture.nativeElement;
-                let homeComponent = fixture.componentInstance;
-                fixture.detectChanges();
+                let component = fixture.componentInstance;
 
-                expect(homeComponent.title).toEqual('Homepage');
+                expect(component.title).toEqual('Homepage');
             });
         })
     );
