@@ -10,15 +10,13 @@ describe('Component: App', () => {
     });
 
     describe('Instantiation', () => {
-        it('should create the app',
-            async(() => {
-                TestBed.compileComponents().then(() => {
-                    let fixture = TestBed.createComponent(AppComponent);
-                    let component = fixture.componentInstance;
+        it('should create the app', () => {
+            TestBed.compileComponents().then(() => {
+                let fixture = TestBed.createComponent(AppComponent);
+                let component = fixture.componentInstance;
 
-                    expect(component).toBeDefined();
-                });
-            })
-        );
+                expect(component).toBeDefined();
+            });
+        })
     });
 });

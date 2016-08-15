@@ -10,15 +10,13 @@ describe('Component: Home', () => {
     });
 
     describe('Instantiation', () => {
-        it('should create the homepage',
-            async(() => {
-                TestBed.compileComponents().then(() => {
-                    let fixture = TestBed.createComponent(HomeComponent);
-                    let component = fixture.componentInstance;
+        it('should create the homepage', () => {
+            TestBed.compileComponents().then(() => {
+                let fixture = TestBed.createComponent(HomeComponent);
+                let component = fixture.componentInstance;
 
-                    expect(component).toBeDefined();
-                });
-            })
-        );
+                expect(component).toBeDefined();
+            });
+        })
     });
 });
