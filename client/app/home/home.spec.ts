@@ -25,7 +25,7 @@ describe('Homepage', () => {
             TestBed.compileComponents().then(() => {
                 let fixture = TestBed.createComponent(HomeComponent);
                 let homeCompiled = fixture.nativeElement;
-                let homeComponent = fixture.debugElement.children[0].componentInstance;
+                let homeComponent = fixture.componentInstance;
                 fixture.detectChanges();
 
                 expect(homeComponent.title).toEqual('Homepage');
