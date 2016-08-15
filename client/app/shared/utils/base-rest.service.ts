@@ -1,5 +1,4 @@
 import { Http, Headers, RequestOptions, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
 
 
 export class BaseRestService {
@@ -20,13 +19,14 @@ export class BaseRestService {
      * @typeparam {T}   The object type of the response data.
      * @param {string}  url     The url of the rest enpoint to call.
      *
-     * @return {Observable<T>} An observable to the response status and data.
+     * @return {Promise<T>} An observable to the response status and data.
      * @throws {Error} An error object if a bad HTTP status is detected.
      */
-    public get<T>(url: string) : Observable<T> {
-        return this.http.get(url, this.options)
-            .map(response => this.extractData(response))
-            .catch(error => this.handleError(error));
+    public get<T>(url: string) : Promise<T> {
+        return this.http.get(url)
+            .toPromise()
+            .then(response => response.json() as T)
+            .catch(this.handleError);
     }
 
     /**
@@ -37,15 +37,16 @@ export class BaseRestService {
      * @param {string}  url     The url of the rest enpoint to call.
      * @param {T}       data    The object to post to the service.
      *
-     * @return {Observable<T>} An observable to the response status and data.
+     * @return {Promise<T>} An observable to the response status and data.
      * @throws {Error} An error object if a bad HTTP status is detected.
      */
-    public post<T, TR>(url: string, data: T) : Observable<TR> {
+    public post<T, TR>(url: string, data: T) : Promise<TR> {
         let body = JSON.stringify(data);
 
         return this.http.post(url, body, this.options)
-            .map(response => this.extractData(response))
-            .catch(error => this.handleError(error));
+            .toPromise()
+            .then(response => response.json() as TR)
+            .catch(this.handleError);
     }
 
     /**
@@ -56,15 +57,16 @@ export class BaseRestService {
      * @param {string}  url     The url of the rest enpoint to call.
      * @param {T}       data    The object to post to the service.
      *
-     * @return {Observable<T>} An observable to the response status and data.
+     * @return {Promise<T>} An observable to the response status and data.
      * @throws {Error} An error object if a bad HTTP status is detected.
      */
-    public put<T, TR>(url: string, data: T) : Observable<TR> {
+    public put<T, TR>(url: string, data: T) : Promise<TR> {
         let body = JSON.stringify(data);
 
         return this.http.put(url, body, this.options)
-            .map(response => this.extractData(response))
-            .catch(error => this.handleError(error));
+            .toPromise()
+            .then(response => response.json() as TR)
+            .catch(this.handleError);
     }
 
     /**
@@ -73,24 +75,13 @@ export class BaseRestService {
      * @typeparam {T}   The object type of the response data.
      * @param {string}  url     The url of the rest enpoint to call.
      *
-     * @return {Observable<T>} An observable to the response status and data.
+     * @return {Promise<any>} An observable to the response status and data.
      * @throws {Error} An error object if a bad HTTP status is detected.
      */
-    public del<T>(url: string) : Observable<T> {
+    public delete(url: string) : Promise<any> {
         return this.http.delete(url, this.options)
-            .map(response => this.extractData(response))
-            .catch(error => this.handleError(error));
-    }
-
-    /**
-     * Extracts the response data from a restful service response.
-     *
-     * @param {Response}  res     The response from a restful service call.
-     *
-     * @return {any) The response data in JSON format or the Response object if "isJson" is false.
-     */
-    private extractData(res: Response) : any {
-        return res.json() || { };
+            .toPromise()
+            .catch(this.handleError);
     }
 
     /**
@@ -99,10 +90,7 @@ export class BaseRestService {
      * @param {any} error   The error text.
      */
     private handleError(error: any) {
-        let errMsg = (error.message)
-            ? error.message
-            : (error.status) ? `${error.status} - ${error.statusText}` : 'Server error';
-
-        return Observable.throw(errMsg);
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
     }
 }
