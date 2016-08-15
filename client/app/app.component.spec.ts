@@ -3,11 +3,20 @@ import { AppComponent } from './app.component';
 
 describe('App', () => {
     beforeEach(() => {
-        TestBed.configureTestingModule([AppComponent]);
+        TestBed.configureTestingModule({
+            declarations: [ AppComponent ]
+        });
     });
 
     it('should create the app',
-        inject([AppComponent], (app: AppComponent) => {
-            expect(app).toBeTruthy();
-        }));
+        async(() => {
+            TestBed.compileComponents().then(() => {
+                let fixture = TestBed.createComponent(AppComponent);
+                fixture.detectChanges();
+
+                let appCompiled = fixture.nativeElement;
+                expect(appCompiled).toBeDefined();
+            });
+        })
+    );
 });
