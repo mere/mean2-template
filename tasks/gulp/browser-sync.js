@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 
 // Contains the server settings
-var config = require('../../server/config/config');
+var config = require('../../src/server/config/config');
 
 // Startup the app's homepage and watch for changes to the Angular 2 HTML and JS files
 gulp.task('browser-sync', function() {
@@ -13,10 +13,10 @@ gulp.task('browser-sync', function() {
             port: 8081
         },
         files: [
-            './build/app/**/*',
-            './build/css/**/*',
-            './build/img/**/*',
-            './build/js/**/*'
+            './dist/app/**/*',
+            './dist/css/**/*',
+            './dist/img/**/*',
+            './dist/js/**/*'
         ]
     });
 });

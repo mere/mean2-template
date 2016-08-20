@@ -1,1 +1,1 @@
-var gulpTasks = require('./gulp/index');
+var gulpTasks = require('./tasks/index');

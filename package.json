@@ -4,8 +4,8 @@
   "description": "Sample MEAN2 Application",
   "author": "Dave McManus",
   "scripts": {
-    "start": "node ./server/bin/www",
-    "launch:dev": "concurrently \"npm run tsc:w\" \"node ./server/bin/www\" \"gulp launch\"",
+    "start": "node ./src/server/bin/www",
+    "launch:dev": "concurrently \"npm run tsc:w\" \"node ./src/server/bin/www\" \"gulp launch\"",
     "build": "gulp build && npm run tsc",
     "build:prod": "gulp build --production && npm run tsc && gulp del-spec-files",
     "tsc": "tsc",

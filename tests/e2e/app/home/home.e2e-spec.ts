@@ -7,8 +7,8 @@ describe('Page: Home', function () {
         page = new HomePage();
     });
 
-    it('should display paragraph saying this is the homepage', () => {
+    it('should display paragraph', () => {
         page.navigateTo();
-        expect(page.getParagraphText()).toEqual('This is the homepage');
+        expect(page.getParagraphText()).toEqual('This is a very simple paragraph on on the homepage.');
     });
 });

@@ -2,6 +2,7 @@
 
 # build output
 /build
+/dist
 
 # files generated during the build process.
 /client/app/environment.ts

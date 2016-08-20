@@ -19,24 +19,24 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            { pattern: 'build/vendor/es6-shim/es6-shim.js', included: true, watched: false },
-            { pattern: 'build/vendor/zone.js/dist/zone.js', included: true, watched: false },
-            { pattern: 'build/vendor/reflect-metadata/Reflect.js', included: true, watched: false },
-            { pattern: 'build/vendor/systemjs/dist/system-polyfills.js', included: true, watched: false },
-            { pattern: 'build/vendor/systemjs/dist/system.src.js', included: true, watched: false },
-            { pattern: 'build/vendor/zone.js/dist/async-test.js', included: true, watched: false },
-            { pattern: 'build/vendor/zone.js/dist/fake-async-test.js', included: true, watched: false },
+            { pattern: 'dist/vendor/es6-shim/es6-shim.js', included: true, watched: false },
+            { pattern: 'dist/vendor/zone.js/dist/zone.js', included: true, watched: false },
+            { pattern: 'dist/vendor/reflect-metadata/Reflect.js', included: true, watched: false },
+            { pattern: 'dist/vendor/systemjs/dist/system-polyfills.js', included: true, watched: false },
+            { pattern: 'dist/vendor/systemjs/dist/system.src.js', included: true, watched: false },
+            { pattern: 'dist/vendor/zone.js/dist/async-test.js', included: true, watched: false },
+            { pattern: 'dist/vendor/zone.js/dist/fake-async-test.js', included: true, watched: false },
 
             { pattern: 'tests/unit/karma-test-shim.js', included: true, watched: true },
 
             // Distribution folder
-            { pattern: 'build/**/*', included: false, watched: true }
+            { pattern: 'dist/**/*', included: false, watched: true }
         ],
 
         // list of files to exclude
         exclude: [
             // Vendor packages might include spec files. We don't want to use those.
-            'build/vendor/**/*.spec.js'
+            'dist/vendor/**/*.spec.js'
         ],
 
         // preprocess matching files before serving them to the browser

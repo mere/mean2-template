@@ -2,7 +2,7 @@
 
     // map tells the System loader where to look for things
     var map = {
-        'app': 'app', // path where the TypeScript compiled JS output is located
+        'app': 'app', // web server virtual path where the TypeScript compiled JS output is located
         '@angular': 'vendor/@angular',
         'rxjs': 'vendor/rxjs'
     };

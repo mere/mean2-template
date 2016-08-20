@@ -9,12 +9,12 @@ var isProd = !!util.env.production;
 // renames it to 'client/app/environment.ts'. This MUST be done prior to TypeScript compilation.
 gulp.task('copy-client-env', function() {
     if (isProd) {
-        return gulp.src('./client/config/environment.prod.ts')
+        return gulp.src('./src/client/config/environment.prod.ts')
             .pipe(rename('environment.ts'))
-            .pipe(gulp.dest('./client/app'));
+            .pipe(gulp.dest('./src/client/app'));
     } else {
-        return gulp.src('./client/config/environment.dev.ts')
+        return gulp.src('./src/client/config/environment.dev.ts')
             .pipe(rename('environment.ts'))
-            .pipe(gulp.dest('./client/app'));
+            .pipe(gulp.dest('./src/client/app'));
     }
 });

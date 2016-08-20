@@ -14,7 +14,7 @@ var isProd = !!util.env.production;
 gulp.task('javascript', function() {
     // Browserify and minify application specific javascript. Then copy the resulting javascript file
     // to the "public/js" folder.
-    var appjs = browserify('./client/javascript/app.js')
+    var appjs = browserify('./src/client/javascript/app.js')
         .bundle()
         .pipe(sourceStream('bundle.js'))
         .pipe(buffer())
@@ -25,11 +25,11 @@ gulp.task('javascript', function() {
             }
         })))
         .pipe(gulpIf(isProd, gulpIgnore.include('*.min.js')))
-        .pipe(gulp.dest('./build/js'));
+        .pipe(gulp.dest('./dist/js'));
 
     // Copy over vendor plugins
-    var plugins = gulp.src('./client/javascript/plugins/**/*')
-        .pipe(gulp.dest('./build/js/plugins'));
+    var plugins = gulp.src('./src/client/javascript/plugins/**/*')
+        .pipe(gulp.dest('./dist/js/plugins'));
 
     return merge(appjs, plugins);
 });
