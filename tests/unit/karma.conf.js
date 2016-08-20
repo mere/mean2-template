@@ -17,6 +17,12 @@ module.exports = function(config) {
             'karma-phantomjs-launcher'
         ],
 
+        // configure the HTML-Detailed-Reporter to put all results in one file
+        htmlDetailed: {
+            splitResults: true,
+            dir: '../_karma-reports'
+        },
+
         // list of files / patterns to load in the browser
         files: [
             { pattern: 'dist/vendor/es6-shim/es6-shim.js', included: true, watched: false },
