@@ -2,6 +2,29 @@ var mongoose = require('mongoose');
 var config = require('../config/config');
 
 
+// Create the database connection
+var dbURI = config.database.dbURI;
+var options = {
+    user: config.database.username,
+    pass: config.database.password,
+    server: {
+        auto_reconnect: true
+    }
+};
+
+var connectWithRetry = function () {
+    return mongoose.connect(dbURI, options, function (err) {
+        if (err) {
+            console.error('No connection to MongoDB server - retrying in 5 sec', err);
+            mongoose.disconnect();
+            setTimeout(connectWithRetry, 5000);
+        }
+    });
+};
+
+connectWithRetry();
+
+
 // CONNECTION EVENTS
 // -- When successfully connected
 mongoose.connection.on('connected', function () {
@@ -32,26 +55,3 @@ process.on('SIGINT', function () {
 
     process.exit(0);
 });
-
-
-// Create the database connection
-var dbURI = config.database.dbURI;
-var options = {
-    user: config.database.username,
-    pass: config.database.password,
-    server: {
-        auto_reconnect: true
-    }
-};
-
-var connectWithRetry = function () {
-    return mongoose.connect(dbURI, options, function (err) {
-        if (err) {
-            console.error('No connection to MongoDB server - retrying in 5 sec', err);
-            mongoose.disconnect();
-            setTimeout(connectWithRetry, 5000);
-        }
-    });
-};
-
-connectWithRetry();
