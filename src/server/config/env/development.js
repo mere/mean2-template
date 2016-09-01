@@ -5,6 +5,7 @@ module.exports = {
     database: {
         dbURI: '',
         username: '',
-        password: ''
+        password: '',
+        auto_reconnect: true
     }
 };

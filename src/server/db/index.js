@@ -8,16 +8,20 @@ var options = {
     user: config.database.username,
     pass: config.database.password,
     server: {
-        auto_reconnect: true
+        auto_reconnect: config.database.auto_reconnect
     }
 };
 
 var connectWithRetry = function () {
     return mongoose.connect(dbURI, options, function (err) {
         if (err) {
-            console.error('No connection to MongoDB server - retrying in 5 sec', err);
+            console.error('No connection to MongoDB server!', err);
             mongoose.disconnect();
-            setTimeout(connectWithRetry, 5000);
+
+            if (config.database.auto_reconnect) {
+                console.log('Retrying MongoDB server connection in 5 sec...');
+                setTimeout(connectWithRetry, 5000);
+            }
         }
     });
 };
