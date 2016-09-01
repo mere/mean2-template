@@ -8,7 +8,7 @@ var options = {
     user: config.database.username,
     pass: config.database.password,
     server: {
-        auto_reconnect: config.database.auto_reconnect
+        auto_reconnect: config.database.autoReconnect
     }
 };
 
@@ -18,7 +18,7 @@ var connectWithRetry = function () {
             console.error('No connection to MongoDB server!', err);
             mongoose.disconnect();
 
-            if (config.database.auto_reconnect) {
+            if (config.database.autoReconnect) {
                 console.log('Retrying MongoDB server connection in 5 sec...');
                 setTimeout(connectWithRetry, 5000);
             }

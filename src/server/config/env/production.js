@@ -6,6 +6,6 @@ module.exports = {
         dbURI: '',
         username: '',
         password: '',
-        auto_reconnect: true
+        autoReconnect: true
     }
 };
